@@ -96,14 +96,15 @@ class chatbot(object):
         return target_text.strip('.')
         
     def test_run(self,statement):
-        print("Response: ",self.reply(statement),"\n")
+        return self.reply(statement)
 
         
 
 
 def main(statement):
     model = chatbot()
-    model.test_run(statement)
+    ret_text=model.test_run(statement)
+    return ret_text
 
 if __name__ == '__main__':
     main()
