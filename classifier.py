@@ -27,7 +27,6 @@ def classifier(statement):
 
     test_data = vectorizer.transform(X_test)
     y_predict = model.predict(test_data)
-    #print(accuracy_score(y_test, y_predict))
     statementList=[statement]
     predict_sample_data = vectorizer.transform(statementList)
     predicted = model.predict(predict_sample_data)
