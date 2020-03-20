@@ -1,4 +1,4 @@
-# Designing dialogue systems: MLT at NeurIPS 2018
+# Designing dialogue systems:MLT at NeurIPS 2018
 
 Experimenting with end-to-end systems with human-like traits, such as humor or creativity: Suzana Ilic and Reiichiro Nakano worked together on a funny, sarcastic deep learning-based chatbot and deployed it in the browser. The chatbot is an end-to-end sequence-to-sequence model that was trained on a custom dataset for dialogue systems. The project was submitted to the “NeurIPS 2018 Workshop: Machine Learning for Creativity and Design” and was accepted as artwork to the workshop online gallery. http://www.aiartonline.com/community/suzana-ilic/
 
