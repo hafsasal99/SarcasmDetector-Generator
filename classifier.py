@@ -1,5 +1,5 @@
 import pandas as pd
-def classifier(statement):
+def train():
     raw = pd.read_json('Sarcasm_Headlines_Dataset.json', lines=True)
     raw.head(3)
     df = raw
@@ -27,10 +27,13 @@ def classifier(statement):
 
     test_data = vectorizer.transform(X_test)
     y_predict = model.predict(test_data)
-    statementList=[statement]
+    return model,vectorizer
+
+def test(statement,model,vectorizer):
+    statementList = [statement]
+    import string
     predict_sample_data = vectorizer.transform(statementList)
     predicted = model.predict(predict_sample_data)
-
     if predicted== 1:
         print("Sarcastic Statement: ",statement)
         from test import main
@@ -61,8 +64,9 @@ sample_data = ['today is sunday',
                    'i am chepal and i am better than rozeen',
                    'i am rozeen and better than chepal',
                    'Nice perfume. How long did you marinate in it?']
+result=train()
 for i in range(len(sample_data)):
     #print('Statement: ',sample_data[i])
-    ret_val=classifier(sample_data[i])
+    ret_val=test(sample_data[i],result[0],result[1])
     print('Response: ',ret_val)#empty response indicates input statement wasn't deemed sarcastic
 
